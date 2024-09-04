@@ -1,0 +1,46 @@
+import os
+
+os.system("cls || clear")
+
+class Conta_Bancaria: 
+    def __init__(self, banco: str, agencia: str, numero_conta: int, tipo_conta: str, saldo: int, limite: int) -> None:
+        self.banco = banco 
+        self.agencia = agencia
+        self.numero_conta = numero_conta
+        self.tipo_conta = tipo_conta
+        self.saldo = saldo
+        self.limite = limite
+
+    def __str__(self) -> str:
+        return (f"\nBanco: {self.banco}\n"
+                f"Agencia: {self.agencia}\n"           
+                f"Número da conta: {self.numero_conta}\n"   
+                f"Tipo: {self.tipo_conta}\n"   
+                f"Saldo atual: {self.saldo}\n"   
+                f"Limite disponivel: {self.limite}"   
+        )
+
+class Funcionario: 
+    def __init__(self, codigo: str, nome: str, endereco: str, telefone: str, email: str, conta: Conta_Bancaria) -> None:
+        self.codigo = codigo
+        self.nome = nome
+        self.endereco = endereco
+        self.telefone = telefone
+        self.email = email
+        self.conta = conta
+
+    def __str__(self) -> str:
+        return (f"Código do funcionario: {self.codigo}\n"
+                f"Nome: {self.nome}\n"           
+                f"Endereço: {self.endereco}\n"   
+                f"Telefone: {self.telefone}\n"   
+                f"E-mail: {self.email}\n"   
+                f"=== Conta Bancaria ===: {self.conta}\n"   
+        )
+
+conta1 = Conta_Bancaria("Nubank", "02", 281, "Corrente", 5000, 2800)
+funcionario1 = Funcionario("444", "Rafael", "Rua ... Apto 202", "7198888", "Rafael@...", conta1)
+
+
+print(funcionario1)
+

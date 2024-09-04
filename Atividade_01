@@ -1,0 +1,26 @@
+import os
+
+os.system("cls || clear")
+
+class Pet: 
+    def __init__(self, nome: str, idade: int, raca: str, porte: str, alimentacao: str) -> None:
+        self.nome = nome 
+        self.idade = idade
+        self.raca = raca
+        self.porte = porte
+        self.alimentacao = alimentacao
+
+    def exibir_dados(self) -> str:
+        return (f"Nome: {self.nome}\n"
+                f"Idade: {self.idade}\n"           
+                f"Raça: {self.raca}\n"   
+                f"Porte: {self.porte}\n"   
+                f"Alimentação: {self.alimentacao}\n"   
+        )
+
+cachorro1 = Pet("Thor", 12, "Cockspaniel", "Medio", "Ração")
+cachorro2 = Pet("Gabriel", 23, "Fuboca", "Pequeno", "Comida")
+
+print(cachorro1.exibir_dados())
+print(cachorro2.exibir_dados())
+
